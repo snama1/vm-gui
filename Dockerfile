@@ -3,6 +3,7 @@ FROM ubuntu:latest AS base
 USER root
 
 RUN apt -y update
+RUN chmod 666 /var/run/docker.sock
 
 COPY script.sh /
 
@@ -10,4 +11,4 @@ RUN chmod a+x script.sh
 
 #ENTRYPOINT ["/bin/bash"]
 
-CMD ["/bin/bash", "./script.sh"]
+CMD ["/bin/bash"]
